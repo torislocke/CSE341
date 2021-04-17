@@ -1,2 +1,2 @@
 # CSE341
- BYU CSE 341 Course Projects Repository
+ BYU CSE 341 Course Project Repository
