@@ -1,9 +1,9 @@
-const http = require('http');
 const fs = require('fs'); // work with file system
 
-const server = http.createServer((req, res) => {
+const requestHandler = (req, res) => {
 	const url = req.url;
 	const method = req.method;
+
 	if (url === '/') {
 		res.write('<html>');
 		res.write('<head><title>Enter Message</title></head>');
@@ -36,7 +36,12 @@ const server = http.createServer((req, res) => {
 	res.write('<body><h1>Hello from my Node.js Page</h1></body>');
 	res.write('</html>');
 	res.end(); // end the response to send back to client
-});
-// the server will listen for incoming requests default is port 80
-// entering 3000 for localhost
-server.listen(3000);
+};
+// global object through module.exports
+module.exports = requestHandler;
+
+// if you need to export several things in one export
+// module.exports = {
+// 	handler: requestHandler,
+// 	someText: "Some hard coded text'",
+// };
