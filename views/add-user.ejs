@@ -1,0 +1,11 @@
+<%- include('includes/header.ejs') %>
+<%- include('includes/nav.ejs') %>
+
+<form class="user-form" action="/prove/add-user" method="POST">
+				<div class="form-control">
+					<label for="userName">Your User Name</label>
+					<input type="text" name="userName" id="userName" />
+				</div>
+				<button class="btn" type="submit">Add User</button>
+			</form>
+<%- include('includes/footer.ejs') %>
